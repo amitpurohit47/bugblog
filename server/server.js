@@ -10,13 +10,13 @@ app.use(express.json());
 app.use(cors());
 
 const dbUrl =
-  "mongodb+srv://bugblog:" +
+  "mongodb+srv://amitpurohit47:" +
   process.env.MONGO_PASSWORD +
-  "@cluster0.uekp5.mongodb.net/bugblog";
+  "@cluster0.a9m33.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 
 mongoose.connect(dbUrl, {
     useNewUrlParser: true,
-});
+},()=>console.log("Mongo Connection success"));
 
 
 app.use("/api/user", userRoute);
